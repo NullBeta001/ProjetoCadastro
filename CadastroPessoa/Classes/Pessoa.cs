@@ -12,9 +12,6 @@ namespace CadastroPessoa.Classes
         public string? endereco { get; set; }
 
 
-        public float CalcularImposto(float rendimento)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract float CalcularImposto(float rendimento);
     }
 }
