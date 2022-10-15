@@ -11,7 +11,13 @@ namespace CadastroPessoa.Classes
 
         public override float CalcularImposto(float rendimento)
         {
-            throw new NotImplementedException();
+            if (rendimento <= 1500)
+            {
+                return 0;
+            }else
+            {
+                return 1;
+            }
         }
 
         public bool ValidarDataNasc(DateTime dataNasc)
