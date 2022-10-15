@@ -2,16 +2,21 @@
 
 PessoaFisica novaPf = new PessoaFisica();
 
-// novaPf.nome = "Fabio";
-// novaPf.cpf = "467.847.478-10";
+novaPf.nome = "Fabio";
+novaPf.cpf = "467.847.478-10";
+novaPf.rendimento = 6600.5f;
 
 // Console.WriteLine(novaPf.cpf);
 
 // Console.WriteLine("Nome: " + novaPf.nome + " - CPF: " + novaPf.cpf);
 // Console.WriteLine($"Nome: {novaPf.nome} - CPF: {novaPf.cpf}");
 
-float imposotoPagar = novaPf.CalcularImposto(12000);
-Console.WriteLine(imposotoPagar + 1000);
+
+float impostoPagar = novaPf.CalcularImposto(novaPf.rendimento);
+Console.WriteLine(impostoPagar.ToString("C2"));
+
+PessoaJuridica novaPj = new PessoaJuridica();
+Console.WriteLine (novaPj.CalcularImposto(6600.5f));
 
 // == igualdade
 // > maior que

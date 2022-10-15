@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\fabio\\.nuget\\packages\\": {}
+    "C:\\Users\\nullb\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fabio\\OneDrive\\Área de Trabalho\\Dev\\ProjetoCadastro\\CadastroPessoa\\CadastroPessoa.csproj",
+      "projectUniqueName": "C:\\Users\\nullb\\OneDrive\\Área de Trabalho\\Dev\\ProjetoCadastro\\CadastroPessoa\\CadastroPessoa.csproj",
       "projectName": "CadastroPessoa",
-      "projectPath": "C:\\Users\\fabio\\OneDrive\\Área de Trabalho\\Dev\\ProjetoCadastro\\CadastroPessoa\\CadastroPessoa.csproj",
-      "packagesPath": "C:\\Users\\fabio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fabio\\OneDrive\\Área de Trabalho\\Dev\\ProjetoCadastro\\CadastroPessoa\\obj\\",
+      "projectPath": "C:\\Users\\nullb\\OneDrive\\Área de Trabalho\\Dev\\ProjetoCadastro\\CadastroPessoa\\CadastroPessoa.csproj",
+      "packagesPath": "C:\\Users\\nullb\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nullb\\OneDrive\\Área de Trabalho\\Dev\\ProjetoCadastro\\CadastroPessoa\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fabio\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\nullb\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
