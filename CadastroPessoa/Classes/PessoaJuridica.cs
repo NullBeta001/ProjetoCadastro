@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using CadastroPessoa.Interfaces;
 
 namespace CadastroPessoa.Classes
@@ -34,9 +35,24 @@ namespace CadastroPessoa.Classes
             }
         }
 
+        // xx.xxx.xxx/xxx1-xx
+        // xxxxxxxxxxx1xx
+
         public bool ValidarCnpj(string cnpj)
         {
-            throw new NotImplementedException();
+            bool retornoCnpjValido = Regex.IsMatch(cnpj, @"^(\d{14})$");
+
+            if (retornoCnpjValido)
+            {
+                string subStringCnpj = cnpj.Substring(8, 4);
+
+                if (subStringCnpj == "0001")
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
