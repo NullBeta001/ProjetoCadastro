@@ -38,8 +38,33 @@
 // Console.WriteLine(novaPf.ValidarDataNasc("02/01/2000"));
 
 PessoaJuridica novaPj = new PessoaJuridica();
+Endereco novoEndPj = new Endereco();
 
-Console.WriteLine(novaPj.ValidarCnpj("26.863.152/0001-01"));
+novaPj.nome = "Nome PJ";
+novaPj.razaoSocial = "Razão Social PJ";
+novaPj.cnpj = "26.863.152/0001-01";
+novaPj.rendimento = 6000.5f;
+
+novoEndPj.logradouro = "Elpídio Gomes";
+novoEndPj.numero = 180;
+novoEndPj.complemento = "SENAI Informatica";
+novoEndPj.endComercial = true;
+
+novaPj.endereco = novoEndPj;
+
+Console.WriteLine(@$"
+Nome: {novaPj.nome}
+Razão Social: {novaPj.razaoSocial}
+CNPJ: {novaPj.cnpj} - Valido: {novaPj.ValidarCnpj(novaPj.cnpj)}
+Rendimento: {novaPj.rendimento}
+
+Endereço
+Rua: {novoEndPj.logradouro}
+Número: {novoEndPj.numero}
+Complemento: {novoEndPj.complemento}
+Endereco Comercial: {novoEndPj.endComercial}
+
+");
 
 // == igualdade
 // > maior que
