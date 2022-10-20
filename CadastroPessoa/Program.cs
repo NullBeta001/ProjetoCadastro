@@ -1,5 +1,30 @@
 ﻿using CadastroPessoa.Classes;
 
+Console.Clear();
+Console.WriteLine(@$"
+
+===========================================
+|   Bem vindo ao sistema de cadastro de   |
+|        Pessoa Física de Jurídica        |
+===========================================
+
+");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //PessoaFisica novaPf = new PessoaFisica();
 // Endereco novoEndPf = new Endereco();
 
