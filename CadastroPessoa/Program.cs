@@ -10,6 +10,47 @@ Console.WriteLine(@$"
 
 ");
 
+Console.BackgroundColor = ConsoleColor.Green;
+Console.ForegroundColor = ConsoleColor.White;
+Console.Write($"Carregando ");
+
+for (int contador = 0; contador < 6; contador++)
+{
+    Thread.Sleep(500);
+    Console.Write($"-");
+}
+
+Console.ResetColor();
+
+string? opcao;
+do
+{
+    Console.WriteLine(@$"
+============================================
+|       Escolha uma das opções abaixo      |
+--------------------------------------------
+|           1 - Pessoa Física              |
+|           2 - Pessoa Jurídica            |
+|                                          |
+|           0 - Sair                       |
+============================================
+");
+
+    opcao = Console.ReadLine();
+
+    switch (opcao)
+    {
+        case "1":
+            break;
+        case "2":
+            break;
+        case "0":
+            break;
+        default:
+            break;
+    }
+
+} while (opcao != "0");
 
 
 
