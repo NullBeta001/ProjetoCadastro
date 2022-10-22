@@ -25,7 +25,7 @@ Console.ResetColor();
 string? opcao;
 do
 {
-    Console.Clear();
+  
     Console.WriteLine(@$"
 ============================================
 |       Escolha uma das opções abaixo      |
