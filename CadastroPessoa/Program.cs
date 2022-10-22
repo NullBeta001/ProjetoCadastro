@@ -22,10 +22,11 @@ for (int contador = 0; contador < 6; contador++)
 
 Console.ResetColor();
 
+Console.Clear();
+
 string? opcao;
 do
 {
-  
     Console.WriteLine(@$"
 ============================================
 |       Escolha uma das opções abaixo      |
