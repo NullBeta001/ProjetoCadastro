@@ -67,7 +67,6 @@ Maior de idade: {novaPf.ValidarDataNasc(novaPf.dataNasc)}
             break;
 
         case "2":
-
             PessoaJuridica novaPj = new PessoaJuridica();
             Endereco novoEndPj = new Endereco();
 
