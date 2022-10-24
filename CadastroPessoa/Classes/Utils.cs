@@ -12,9 +12,7 @@ namespace CadastroPessoa.Classes
             {
                 Thread.Sleep(tempo);
                 Console.Write($"{elemento}");
-
             }
-
             Console.ResetColor();
         }
     }

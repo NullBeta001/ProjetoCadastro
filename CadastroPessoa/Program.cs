@@ -114,8 +114,6 @@ Endereco Comercial: {novoEndPj.endComercial}
 
 } while (opcao != "0");
 
-
-
 // Console.WriteLine(novaPf.cpf);
 
 // Console.WriteLine("Nome: " + novaPf.nome + " - CPF: " + novaPf.cpf);
