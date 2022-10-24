@@ -10,23 +10,12 @@ Console.WriteLine(@$"
 
 ");
 
-Console.BackgroundColor = ConsoleColor.Green;
-Console.ForegroundColor = ConsoleColor.White;
-Console.Write($"Carregando ");
-
-for (int contador = 0; contador < 6; contador++)
-{
-    Thread.Sleep(500);
-    Console.Write($"-");
-}
-
-Console.ResetColor();
-
-Console.Clear();
+Utils.BarraCarregamento("Carregando", 5, " ", 500);
 
 string? opcao;
 do
 {
+    Console.Clear();
     Console.WriteLine(@$"
 ============================================
 |       Escolha uma das opções abaixo      |
@@ -59,11 +48,15 @@ do
 
             novaPf.endereco = novoEndPf;
 
+            Console.Clear();
             Console.WriteLine(@$"
 Nome: {novaPf.nome}
 Endereço: {novaPf.endereco.logradouro}, {novaPf.endereco.numero}
 Maior de idade: {novaPf.ValidarDataNasc(novaPf.dataNasc)}
 ");
+
+            Console.WriteLine($"Aperte 'ENTER' para continuar");
+            Console.ReadLine();
 
             break;
 
@@ -83,6 +76,7 @@ Maior de idade: {novaPf.ValidarDataNasc(novaPf.dataNasc)}
 
             novaPj.endereco = novoEndPj;
 
+            Console.Clear();
             Console.WriteLine(@$"
 Nome: {novaPj.nome}
 Razão Social: {novaPj.razaoSocial}
@@ -97,14 +91,24 @@ Endereco Comercial: {novoEndPj.endComercial}
 
 ");
 
+            Console.WriteLine($"Aperte 'ENTER' para continuar");
+            Console.ReadLine();
+
             break;
 
         case "0":
+            Console.WriteLine("Obrigado por ultilizar nosso sistema!");
+
+            Utils.BarraCarregamento("Saindo", 4, "-", 400);
+
             break;
 
         default:
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine($"Opção Inválida! Por favor digite uma opção válida");
-
+            Console.ResetColor();
+            Thread.Sleep(3000);
             break;
     }
 
