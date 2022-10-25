@@ -33,32 +33,97 @@ do
     {
         case "1":
 
-            PessoaFisica novaPf = new PessoaFisica();
-            Endereco novoEndPf = new Endereco();
+            string? opcaoPf;
+            do
+            {
+                {
+                    Console.Clear();
+                    Console.WriteLine(@$"
+============================================
+|       Escolha uma das opções abaixo      |
+--------------------------------------------
+|       1 - Cadastrar Pessoa Física        |
+|       2 - Listar Pessoa Física           |
+|                                          |
+|       0 - Voltar ao Menu Anterior        |
+============================================
+");
+                    opcaoPf = Console.ReadLine();
 
-            novaPf.nome = "Fabio";
-            novaPf.cpf = "467.847.478-10";
-            novaPf.rendimento = 6600.5f;
-            novaPf.dataNasc = new DateTime(1997, 12, 22);
+                    switch (opcaoPf)
+                    {
+                        case "1":
+                            PessoaFisica novaPf = new PessoaFisica();
+                            Endereco novoEndPf = new Endereco();
 
-            novoEndPf.logradouro = "Rua Sebastião Damacena";
-            novoEndPf.numero = 242;
-            novoEndPf.complemento = "Casa";
-            novoEndPf.endComercial = true;
+                            Console.WriteLine($"Digite o nome da pessoa física que deseja cadastrar");
+                            novaPf.nome = Console.ReadLine();
 
-            novaPf.endereco = novoEndPf;
+                            bool dataValida;
+                            do
+                            {
+                                Console.WriteLine($"Digite a data de nascimento Ex:DD/MM/AAAA");
+                                string? dataNascimento = Console.ReadLine();
 
-            Console.Clear();
-            Console.WriteLine(@$"
+                                dataValida = novaPf.ValidarDataNasc(dataNascimento);
+
+                                if (dataValida == true)
+                                {
+                                    DateTime.TryParse(dataNascimento, out DateTime dataConvertida);
+                                    novaPf.dataNasc = dataConvertida;
+                                    
+                                }else{
+                                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                                    Console.WriteLine($"Data inválida, por favor digite uma data valida");
+                                    Console.ResetColor();
+                                    Thread.Sleep(3000);
+                                }
+
+                            } while (!dataValida);//Data Válida == false
+
+                            Console.WriteLine($"Digite o número do CPF");
+                            novaPf.cpf = Console.ReadLine();
+                            novaPf.rendimento = 6600.5f;
+                            novaPf.dataNasc = new DateTime(1997, 12, 22);
+
+                            novoEndPf.logradouro = "Rua Sebastião Damacena";
+                            novoEndPf.numero = 242;
+                            novoEndPf.complemento = "Casa";
+                            novoEndPf.endComercial = true;
+
+                            novaPf.endereco = novoEndPf;
+
+                            break;
+
+                        case "2":
+
+                            break;
+
+                        case "0":
+
+                            break;
+
+                        default:
+                            break;
+                    }
+
+
+
+                } while (opcaoPf != "0") ;
+
+
+
+                Console.Clear();
+                Console.WriteLine(@$"
 Nome: {novaPf.nome}
 Endereço: {novaPf.endereco.logradouro}, {novaPf.endereco.numero}
 Maior de idade: {novaPf.ValidarDataNasc(novaPf.dataNasc)}
 ");
 
-            Console.WriteLine($"Aperte 'ENTER' para continuar");
-            Console.ReadLine();
+                Console.WriteLine($"Aperte 'ENTER' para continuar");
+                Console.ReadLine();
 
-            break;
+                break;
 
         case "2":
             PessoaJuridica novaPj = new PessoaJuridica();
