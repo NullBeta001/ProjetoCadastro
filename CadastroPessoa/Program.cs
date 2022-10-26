@@ -1,5 +1,6 @@
 ﻿using CadastroPessoa.Classes;
 
+PessoaFisica metodosPf = new PessoaFisica();
 List<PessoaFisica> listaPf = new List<PessoaFisica>();
 
 Console.Clear();
@@ -87,7 +88,7 @@ do
                         Console.WriteLine($"Digite o número do CPF");
                         novaPf.cpf = Console.ReadLine();
 
-                        Console.WriteLine($"Digite o rendimento mensal (Digite somente números");
+                        Console.WriteLine($"Digite o rendimento mensal (Digite somente números)");
                         novaPf.rendimento = float.Parse(Console.ReadLine());
 
                         Console.WriteLine($"Digite o logradouro");
@@ -125,27 +126,50 @@ do
 
                     case "2":
 
+                        Console.Clear();
+
+                        if (listaPf.Count > 0)
+                        {
+                            foreach (PessoaFisica cadaPf in listaPf)
+                            {
+                                Console.Clear();
+                                Console.WriteLine(@$"
+Nome: {cadaPf.nome}
+Endereço: {cadaPf.endereco.logradouro}, {cadaPf.endereco.numero}
+Data de Nascimento: {cadaPf.dataNasc.ToString("d")}
+Imposto a ser pago: {metodosPf.CalcularImposto(cadaPf.rendimento).ToString("C")}
+");
+                                Console.WriteLine($"Aperte 'ENTER' para continuar");
+                                Console.ReadLine();
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Lista vazia");
+                            Thread.Sleep(2000);
+                        }
+
                         break;
 
                     case "0":
+                        Console.ForegroundColor = ConsoleColor.DarkBlue;
+                        Console.WriteLine($"Voltando ao menu anterior");
+                        Console.ResetColor();
+                        Thread.Sleep(2000);
 
                         break;
 
                     default:
+                        Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.WriteLine($"Opção Inválida! Por favor digite uma opção válida");
+                        Console.ResetColor();
+                        Thread.Sleep(3000);
+
                         break;
                 }
 
             } while (opcaoPf != "0");
-
-//             Console.Clear();
-//             Console.WriteLine(@$"
-// Nome: {novaPf.nome}
-// Endereço: {novaPf.endereco.logradouro}, {novaPf.endereco.numero}
-// Maior de idade: {novaPf.ValidarDataNasc(novaPf.dataNasc)}
-// ");
-
-            Console.WriteLine($"Aperte 'ENTER' para continuar");
-            Console.ReadLine();
 
             break;
 
@@ -169,7 +193,7 @@ do
             Console.WriteLine(@$"
 Nome: {novaPj.nome}
 Razão Social: {novaPj.razaoSocial}
-CNPJ: {novaPj.cnpj} - Valido: {novaPj.ValidarCnpj(novaPj.cnpj)}
+CNPJ: {novaPj.cnpj} - Valido: {(novaPj.ValidarCnpj(novaPj.cnpj) ? "Sim" : "Não")}
 Rendimento: {novaPj.rendimento}
 
 Endereço
@@ -180,6 +204,7 @@ Endereco Comercial: {novoEndPj.endComercial}
 
 ");
 
+            // if ternario = ? "Sim" : "Não"
             Console.WriteLine($"Aperte 'ENTER' para continuar");
             Console.ReadLine();
 
